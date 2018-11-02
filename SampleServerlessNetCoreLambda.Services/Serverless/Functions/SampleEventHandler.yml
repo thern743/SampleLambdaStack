@@ -1,0 +1,11 @@
+﻿SampleEventHandler:
+    handler: SampleServerlessNetCoreLambda.Services::SampleServerlessNetCoreLambda.Services.Lambdas.SampleEventHandler::Consume
+    awsKmsKeyArn: ${self:custom.kms.arn}    
+    memorySize: 256
+    timeout: 30
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - SampleEventQueue
+              - Arn

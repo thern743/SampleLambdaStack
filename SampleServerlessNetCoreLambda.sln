@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{8E23D735-5F17-4F66-9D55-256ECEB254F8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Integration.Tests", "SampleServerlessNetCoreLambda.Integration.Tests\SampleServerlessNetCoreLambda.Integration.Tests.csproj", "{B851E695-5386-466A-9BB3-3185C660B02B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Common", "SampleServerlessNetCoreLambda.Common\SampleServerlessNetCoreLambda.Common.csproj", "{9F3C9ED9-1E20-4D1D-B45A-D932A13A8192}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Services", "SampleServerlessNetCoreLambda.Services\SampleServerlessNetCoreLambda.Services.csproj", "{BAB1D98F-D75D-4CE5-8FAD-02033B7BED63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambdaRole", "SampleServerlessNetCoreLambdaRole\SampleServerlessNetCoreLambdaRole.csproj", "{4AB1EF11-7D8C-43EB-9AA9-F98B1D736D8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Services.SampleServiceOne", "SampleServerlessNetCoreLambda.Services.SampleServiceOne\SampleServerlessNetCoreLambda.Services.SampleServiceOne.csproj", "{8DC7C45A-65E4-40C2-BA93-67931F8DB087}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Services.SampleServiceTwo", "SampleServerlessNetCoreLambda.Services.SampleServiceTwo\SampleServerlessNetCoreLambda.Services.SampleServiceTwo.csproj", "{F5ACCE27-C294-4118-AB5A-328619EBE082}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleServerlessNetCoreLambda.Unit.Tests", "SampleServerlessNetCoreLambda.Unit.Tests\SampleServerlessNetCoreLambda.Unit.Tests.csproj", "{6315984C-4A2A-40CF-8BBC-FEDF34FFD7E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lambda.Common", "Lambda.Common\Lambda.Common.csproj", "{FFA44901-EE2E-4012-AF96-1E71B2CE3830}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lambda.Routing", "Lambda.Routing\Lambda.Routing.csproj", "{8B6692F3-2865-4191-BB2F-1AD1D49F511B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B851E695-5386-466A-9BB3-3185C660B02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B851E695-5386-466A-9BB3-3185C660B02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B851E695-5386-466A-9BB3-3185C660B02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B851E695-5386-466A-9BB3-3185C660B02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3C9ED9-1E20-4D1D-B45A-D932A13A8192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3C9ED9-1E20-4D1D-B45A-D932A13A8192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3C9ED9-1E20-4D1D-B45A-D932A13A8192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3C9ED9-1E20-4D1D-B45A-D932A13A8192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB1D98F-D75D-4CE5-8FAD-02033B7BED63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB1D98F-D75D-4CE5-8FAD-02033B7BED63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB1D98F-D75D-4CE5-8FAD-02033B7BED63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB1D98F-D75D-4CE5-8FAD-02033B7BED63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB1EF11-7D8C-43EB-9AA9-F98B1D736D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB1EF11-7D8C-43EB-9AA9-F98B1D736D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB1EF11-7D8C-43EB-9AA9-F98B1D736D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB1EF11-7D8C-43EB-9AA9-F98B1D736D8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC7C45A-65E4-40C2-BA93-67931F8DB087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC7C45A-65E4-40C2-BA93-67931F8DB087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC7C45A-65E4-40C2-BA93-67931F8DB087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC7C45A-65E4-40C2-BA93-67931F8DB087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5ACCE27-C294-4118-AB5A-328619EBE082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5ACCE27-C294-4118-AB5A-328619EBE082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5ACCE27-C294-4118-AB5A-328619EBE082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5ACCE27-C294-4118-AB5A-328619EBE082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6315984C-4A2A-40CF-8BBC-FEDF34FFD7E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6315984C-4A2A-40CF-8BBC-FEDF34FFD7E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6315984C-4A2A-40CF-8BBC-FEDF34FFD7E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6315984C-4A2A-40CF-8BBC-FEDF34FFD7E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA44901-EE2E-4012-AF96-1E71B2CE3830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA44901-EE2E-4012-AF96-1E71B2CE3830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA44901-EE2E-4012-AF96-1E71B2CE3830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA44901-EE2E-4012-AF96-1E71B2CE3830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B6692F3-2865-4191-BB2F-1AD1D49F511B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6692F3-2865-4191-BB2F-1AD1D49F511B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6692F3-2865-4191-BB2F-1AD1D49F511B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6692F3-2865-4191-BB2F-1AD1D49F511B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CEAE27F-9A45-409A-93B7-5FDD2A210523}
+	EndGlobalSection
+EndGlobal

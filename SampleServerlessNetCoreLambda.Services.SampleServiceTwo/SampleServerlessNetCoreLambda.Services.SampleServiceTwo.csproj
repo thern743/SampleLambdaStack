@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AssemblyName>CreditRewards.Services.DurableToChd</AssemblyName>
+    <PackageId>aws-csharp</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleServerlessNetCoreLambda.Common\SampleServerlessNetCoreLambda.Common.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+﻿Resources:
+    SampleEventQueue:
+      Type: "AWS::SQS::Queue"      
+      Properties:
+        QueueName: "SampleEventQueue-${self:custom.stage}"       

@@ -1,0 +1,91 @@
+﻿# **********************************************************************************************************
+# This lambda role (and associated CF stack) must be owned by stage 'dev' and 'prod' only.
+# This allows lambda functions to to be deployed to any stage but share a common role.
+# **********************************************************************************************************
+
+service: SampleServerlessNetCoreLambdaRole
+
+# **********************************************************************************************************
+# To support customizations and multiple accounts, create a 'serverless-custom-<account name>.js' file in the root serverless directory.
+# To override the default account name, use the 'account' parameter like so:
+#
+#       serverless deploy --stage <stage> --account <account name>
+custom: ${file(serverless-custom-${opt:account, 'myAccount'}.js)}
+# **********************************************************************************************************
+
+provider:
+  name: aws
+  profile: ${self:custom.profile.${self:custom.stage}, 'default'}
+  region: us-west-2
+  stage: ${opt:stage, 'localdev'}
+
+resources:
+  Outputs:
+    SampleServerlessNetCoreKmsKeyArn:
+      Description: "SampleServerlessNetCoreKmsKey Arn value"
+      Value:
+        Fn::GetAtt:
+          - "SampleServerlessNetCoreKmsKey"
+          - "Arn"
+
+  Resources:
+    SampleServerlessNetCoreLambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        Path: ${self:custom.role.path}
+        RoleName: ${self:custom.role.name}
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: "Allow"
+              Principal:
+                Service:
+                  - "lambda.amazonaws.com"
+              Action: "sts:AssumeRole"
+        ManagedPolicyArns:
+          - "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+          - "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+          - "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
+        Policies:
+          - PolicyName: SampleServerlessNetCoreLambdaPolicy
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Effect: "Allow"
+                  Action: "s3:*"
+                  Resource: "arn:aws:s3:::*"
+                - Effect: "Allow"
+                  Action: "kms:*"
+                  Resource: "*"
+
+    SampleServerlessNetCoreKmsKey:
+      DependsOn: "SampleServerlessNetCoreLambdaRole"
+      Type: AWS::KMS::Key
+      Properties:
+        Description: "SampleServerlessNetCore KMS Key"
+        KeyPolicy:
+          Version: "2012-10-17"
+          Id: "${self:custom.kms.keyId}"
+          Statement:
+            -
+              Effect: "Allow"
+              Principal:
+                AWS: "arn:aws:iam::${self:custom.accountId.${self:custom.stage}, self:custom.accountId.default}:root"
+              Action: "kms:*"
+              Resource: "*"
+            -
+              Effect: "Allow"
+              Principal:
+                AWS: "arn:aws:iam::${self:custom.accountId.${self:custom.stage}, self:custom.accountId.default}:role${self:custom.role.path}${self:custom.role.name}"
+              Action: "kms:*"
+              Resource: "*"
+
+    SampleServerlessNetCoreKmsKeyAlias:
+      DependsOn: "SampleServerlessNetCoreKmsKey"
+      Type: AWS::KMS::Alias
+      Properties:
+        AliasName: alias/${self:custom.kms.alias}
+        TargetKeyId:
+          Fn::GetAtt:
+            - "SampleServerlessNetCoreKmsKey"
+            - "Arn"

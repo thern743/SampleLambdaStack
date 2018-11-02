@@ -1,0 +1,2 @@
+﻿  - ${file(Serverless/Resources/SampleServerlessNetCoreSecurityGroup.yml)}
+  - ${file(Serverless/Resources/SampleEventQueue.yml)}

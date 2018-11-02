@@ -1,0 +1,2 @@
+﻿  - ${file(Serverless/Functions/SampleRequestHandler.yml)}
+  - ${file(Serverless/Functions/SampleEventHandler.yml)}

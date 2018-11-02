@@ -1,0 +1,12 @@
+﻿Resources:
+    SampleServerlessNetCoreSecurityGroup:
+      Type: "AWS::EC2::SecurityGroup"
+      Properties:
+        GroupName: "SampleServerlessNetCoreSecurityGroup-${self:custom.stage}"
+        GroupDescription: "Sample Security Group"
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: "0"
+            ToPort: "65535"
+            CidrIp: "10.81.0.0/16"
+        VpcId: ${self:custom.vpcIds.${self:custom.stage}, self:custom.vpcIds.default}

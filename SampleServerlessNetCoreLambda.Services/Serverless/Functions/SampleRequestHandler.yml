@@ -1,0 +1,22 @@
+﻿SampleRequestHandler:
+    handler: SampleServerlessNetCoreLambda.Services::SampleServerlessNetCoreLambda.Services.Lambdas.SampleRequestHandler::Handler
+    awsKmsKeyArn: ${self:custom.kms.arn}    
+    memorySize: 256
+    timeout: 30
+    events:
+      - http:
+          method: GET
+          path: /foo/bar/{value}
+          cors: true            
+      - http:
+          method: POST
+          path: /foo/bar/{value}
+          cors: true          
+      - http:
+          method: GET
+          path: /foo/bar/baz/{value}
+          cors: true            
+      - http:
+          method: POST
+          path: /foo/bar/baz/{value}
+          cors: true          
